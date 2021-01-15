@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'XHSegmentPageView_Example' do
+  pod 'XHSegmentPageView', :path => '../'
+
+  target 'XHSegmentPageView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
