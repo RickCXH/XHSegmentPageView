@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3AD62EC08A205EAB2A460676 /* Pods_XHSegmentPageView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E33063DFFE49FDBCB1BD5F /* Pods_XHSegmentPageView_Example.framework */; };
+		55FC8D6F25BABA8400A6C616 /* XHChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC8D6E25BABA8400A6C616 /* XHChildViewController.swift */; };
+		55FC8D7325BABB5300A6C616 /* XHDemo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC8D7225BABB5300A6C616 /* XHDemo1ViewController.swift */; };
+		55FC8D7925BABCE900A6C616 /* XHDemo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC8D7825BABCE900A6C616 /* XHDemo2ViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,8 +32,11 @@
 
 /* Begin PBXFileReference section */
 		085DB7FBA168ED351531E4BF /* Pods_XHSegmentPageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XHSegmentPageView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9B2AA1A4380165A90575FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2A9B2AA1A4380165A90575FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		374725E1EDC53E43EF3B191E /* Pods-XHSegmentPageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHSegmentPageView_Example.debug.xcconfig"; path = "Target Support Files/Pods-XHSegmentPageView_Example/Pods-XHSegmentPageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		55FC8D6E25BABA8400A6C616 /* XHChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHChildViewController.swift; sourceTree = "<group>"; };
+		55FC8D7225BABB5300A6C616 /* XHDemo1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHDemo1ViewController.swift; sourceTree = "<group>"; };
+		55FC8D7825BABCE900A6C616 /* XHDemo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHDemo2ViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* XHSegmentPageView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHSegmentPageView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,8 +50,8 @@
 		91E33063DFFE49FDBCB1BD5F /* Pods_XHSegmentPageView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XHSegmentPageView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02FCEB040DE4A4EF0D29A00 /* Pods-XHSegmentPageView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHSegmentPageView_Example.release.xcconfig"; path = "Target Support Files/Pods-XHSegmentPageView_Example/Pods-XHSegmentPageView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B0B0BE029D126ABF5C711B37 /* Pods-XHSegmentPageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHSegmentPageView_Tests.release.xcconfig"; path = "Target Support Files/Pods-XHSegmentPageView_Tests/Pods-XHSegmentPageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		BE5A70E8FFF46BADDD6EFACD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		D1EFD83BC37E1C5F43809034 /* XHSegmentPageView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = XHSegmentPageView.podspec; path = ../XHSegmentPageView.podspec; sourceTree = "<group>"; };
+		BE5A70E8FFF46BADDD6EFACD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D1EFD83BC37E1C5F43809034 /* XHSegmentPageView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XHSegmentPageView.podspec; path = ../XHSegmentPageView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EEA26758C27590892DE1A600 /* Pods-XHSegmentPageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHSegmentPageView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-XHSegmentPageView_Tests/Pods-XHSegmentPageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +110,9 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				55FC8D7225BABB5300A6C616 /* XHDemo1ViewController.swift */,
+				55FC8D7825BABCE900A6C616 /* XHDemo2ViewController.swift */,
+				55FC8D6E25BABA8400A6C616 /* XHChildViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -156,7 +165,6 @@
 				EEA26758C27590892DE1A600 /* Pods-XHSegmentPageView_Tests.debug.xcconfig */,
 				B0B0BE029D126ABF5C711B37 /* Pods-XHSegmentPageView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,6 +215,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XH;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
@@ -227,6 +236,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -313,10 +323,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-XHSegmentPageView_Example/Pods-XHSegmentPageView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XHSegmentPageView/XHSegmentPageView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XHSegmentPageView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				55FC8D7925BABCE900A6C616 /* XHDemo2ViewController.swift in Sources */,
+				55FC8D6F25BABA8400A6C616 /* XHChildViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				55FC8D7325BABB5300A6C616 /* XHDemo1ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

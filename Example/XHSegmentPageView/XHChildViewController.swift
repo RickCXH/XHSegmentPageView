@@ -1,28 +1,20 @@
 //
-//  ViewController.swift
-//  XHSegmentPageView
+//  XHChildViewController.swift
+//  RSegmentPageView
 //
-//  Created by RickCXH on 01/15/2021.
-//  Copyright (c) 2021 RickCXH. All rights reserved.
+//  Created by iOSzhangting on 2021/1/15.
 //
 
 import UIKit
-@_exported import SnapKit
 
-let kScreenWidth = UIScreen.main.bounds.width
-let kScreenheight = UIScreen.main.bounds.height
-
-class ViewController: UIViewController {
-    
-    let dataList: [String] = ["整体", "组合"]
+class XHChildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "XHSegmentPageView"
-        
+
         setupUI()
     }
-
+    
     private func setupUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -30,9 +22,10 @@ class ViewController: UIViewController {
         }
     }
     
+
     private lazy var tableView: UITableView = {
         let t = UITableView.init(frame: CGRect.zero, style: .plain)
-        t.backgroundColor = UIColor.white
+        t.backgroundColor = .white
         t.dataSource = self
         t.delegate = self
         t.tableHeaderView = UIView()
@@ -42,14 +35,14 @@ class ViewController: UIViewController {
         t.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return t
     }()
-
+    
 }
 
 // MARK: - UITableViewDataSource UITableViewDelegate
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension XHChildViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataList.count
+        return 100
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,20 +51,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = dataList[indexPath.row]
+        cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath.row {
-        case 0:
-            navigationController?.pushViewController(XHDemo1ViewController(), animated: true)
-        case 1:
-            navigationController?.pushViewController(XHDemo2ViewController(), animated: true)
-        default:()
-        }
     }
     
 }
-

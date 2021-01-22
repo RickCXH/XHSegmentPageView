@@ -1,0 +1,23 @@
+PODS:
+  - SnapKit (4.2.0)
+  - XHSegmentPageView (1.0.0):
+    - SnapKit
+
+DEPENDENCIES:
+  - XHSegmentPageView (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  XHSegmentPageView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  XHSegmentPageView: 27d1ac15ae3a769ca5441bb80d8fc2944f78170d
+
+PODFILE CHECKSUM: 7788a273f79efec377675a181149c3019a2d4c3d
+
+COCOAPODS: 1.10.0

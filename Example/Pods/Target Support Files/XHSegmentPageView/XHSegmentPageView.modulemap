@@ -1,0 +1,6 @@
+framework module XHSegmentPageView {
+  umbrella header "XHSegmentPageView-umbrella.h"
+
+  export *
+  module * { export * }
+}
