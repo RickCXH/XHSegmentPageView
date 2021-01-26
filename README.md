@@ -1,4 +1,5 @@
 # XHSegmentPageView
+<<<<<<< HEAD
 
 [![CI Status](https://img.shields.io/travis/RickCXH/XHSegmentPageView.svg?style=flat)](https://travis-ci.org/RickCXH/XHSegmentPageView)
 [![Version](https://img.shields.io/cocoapods/v/XHSegmentPageView.svg?style=flat)](https://cocoapods.org/pods/XHSegmentPageView)
@@ -27,3 +28,6 @@ RickCXH, 1059056916@qq.com
 ## License
 
 XHSegmentPageView is available under the MIT license. See the LICENSE file for more info.
+=======
+XHSegmentPageView
+>>>>>>> 0208aa3545f7351f17554145f4b947bd1c4b92e6

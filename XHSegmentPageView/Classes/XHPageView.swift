@@ -86,7 +86,7 @@ extension XHPageView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let childVc = children[indexPath.item]
         if childVc.isViewLoaded { return }
-        superView?.addChildViewController(childVc)
+        superView?.addChild(childVc)
         childVc.view.frame = cell.contentView.frame
         cell.contentView.addSubview(childVc.view)
     }

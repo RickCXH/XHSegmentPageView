@@ -10,14 +10,14 @@ import SnapKit
 
 class XHSegmentViewCell: UICollectionViewCell {
     
-    var config: XHSegmentConfig?
-    
-    var isChecked: Bool = false {
+    var model: XHSegmentTitleModel? {
         didSet {
-            if isChecked {
-                titleLabel.textColor = config?.titleSelectedColor
+            guard let model = model else { return }
+            titleLabel.text = model.title
+            if model.isSelected {
+                titleLabel.textColor = model.titleSelectedColor
             } else {
-                titleLabel.textColor = config?.titleNormalColor
+                titleLabel.textColor = model.titleNormalColor
             }
         }
     }

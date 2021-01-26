@@ -20,10 +20,13 @@ open class XHSegmentView: UIView {
     
     private var selectedIndex: Int = 0
     private var cellsSizes: [Int: CGSize] = [:]
+    
+    private var dataList: [XHSegmentTitleModel] = []
  
     @objc public init(frame: CGRect, config: XHSegmentConfig) {
         self.config = config
         super.init(frame: frame)
+        initModel()
         setupUI()
     }
     
@@ -41,20 +44,30 @@ open class XHSegmentView: UIView {
         }
     }
     
+    private func initModel() {
+        for i in 0..<config.titleArray.count {
+            let model = XHSegmentTitleModel()
+            model.title = config.titleArray[i]
+            model.titleNormalColor = config.titleNormalColor
+            model.titleSelectedColor = config.titleSelectedColor
+            model.isSelected = (i == selectedIndex)
+            dataList.append(model)
+        }
+    }
+    
     public func scrollToItem(to index: Int, animated: Bool = true) {
         let indexPath = IndexPath(item: index, section: 0)
-        selectedIndex = index
         self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
         guard let cell = self.collectionView.cellForItem(at: indexPath) as? XHSegmentViewCell else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 if let cell1 = self.collectionView.cellForItem(at: indexPath) as? XHSegmentViewCell {
-                    self.updateSelectedItem(cell1)
+                    self.updateSelectedItem(index)
                     self.setSelectedIndicatorFrame(cell: cell1, indexPath: indexPath, animated: animated)
                 }
             }
             return
         }
-        self.updateSelectedItem(cell)
+        self.updateSelectedItem(index)
         self.setSelectedIndicatorFrame(cell: cell, indexPath: indexPath, animated: animated)
     }
     
@@ -86,14 +99,21 @@ open class XHSegmentView: UIView {
         
     }
     
-    private func updateSelectedItem(_ selectedCell: XHSegmentViewCell) {
-        collectionView.visibleCells.forEach { (cell) in
-            if cell == selectedCell {
-                selectedCell.titleLabel.textColor = config.titleSelectedColor
-            } else {
-                (cell as? XHSegmentViewCell)?.titleLabel.textColor = config.titleNormalColor
-            }
+    private func updateSelectedItem(_ index: Int) {
+        if index == selectedIndex { return }
+        let previousModel = dataList[selectedIndex]
+        previousModel.isSelected = false
+        if let cell = collectionView.cellForItem(at: IndexPath(item: selectedIndex, section: 0)) as? XHSegmentViewCell {
+            cell.model = previousModel
+        } else {
+            collectionView.reloadData()
         }
+        let currentModel = dataList[index]
+        currentModel.isSelected = true
+        if let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? XHSegmentViewCell {
+            cell.model = currentModel
+        }
+        selectedIndex = index
     }
     
     private func getItemSize(_ indexPath: IndexPath) -> CGSize {
@@ -166,24 +186,21 @@ open class XHSegmentView: UIView {
 extension XHSegmentView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return config.titleArray.count
+        return dataList.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: XHSegmentViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! XHSegmentViewCell
-        cell.config = config
-        cell.titleLabel.text = config.titleArray[indexPath.item]
-        cell.isChecked = (selectedIndex == indexPath.item)
+        cell.model = dataList[indexPath.item]
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if selectedIndex == indexPath.item { return }
         guard let selectedCell = collectionView.cellForItem(at: indexPath) as? XHSegmentViewCell else { return }
-        selectedIndex = indexPath.item
-        delegate?.segmentView(self, didSelectItemAt: selectedIndex)
-        updateSelectedItem(selectedCell)
+        updateSelectedItem(indexPath.item)
         setSelectedIndicatorFrame(cell: selectedCell, indexPath: indexPath)
+        delegate?.segmentView(self, didSelectItemAt: indexPath.item)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
@@ -192,8 +209,6 @@ extension XHSegmentView: UICollectionViewDelegate, UICollectionViewDataSource {
             if let showCell = cell as? XHSegmentViewCell, config.indicatorType != .none {
                 setSelectedIndicatorFrame(cell: showCell, indexPath: indexPath, animated: false)
             }
-        } else { //修复titleLabel取消点击之后不恢复normalColor
-            (cell as? XHSegmentViewCell)?.titleLabel.textColor = config.titleNormalColor
         }
     }
 
